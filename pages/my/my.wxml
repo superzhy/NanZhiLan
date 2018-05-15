@@ -67,7 +67,7 @@
 
 <!-- list -->
 <view class='my-list bg-fff'>
-  <view class='item flex'>
+  <button class='item flex' open-type='share'>
     <view class='icon'>
       <image src='../../libs/icon/mylist01.png' style="width:43rpx;height:49rpx;"></image>
     </view>
@@ -75,7 +75,7 @@
     <view class='pull-right'>
     <image src='../../libs/icon/back2.png'></image>
     </view>
-  </view>
+  </button>
   <view class='item flex' bindtap='showAddress'>
     <view class='icon'><image src='../../libs/icon/mylist02.png'></image></view>
     <text class='flexC'>收货地址</text>
@@ -83,13 +83,13 @@
     <image src='../../libs/icon/back2.png'></image>
     </view>
   </view>
-  <view class='item flex'>
+  <button class='item flex' open-type='contact'>
     <view class='icon'><image src='../../libs/icon/mylist03.png'></image></view>
     <text class='flexC'>官方客服</text>
     <view class='pull-right'>
     <image src='../../libs/icon/back2.png'></image>
     </view>
-  </view>
+  </button>
   <view class='item flex' bindtap='openSetting'>
     <view class='icon'><image src='../../libs/icon/mylist04.png'></image></view>
     <text class='flexC'>设置</text>

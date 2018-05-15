@@ -1,6 +1,18 @@
 page {
   background: #f4f4f4;
 }
+button {
+  padding-left: 0;
+  padding-right:0;
+  line-height: 1;
+  background-color: #fff;
+  text-align: left;
+  border-radius: 0;
+}
+button::after {
+  border: none;
+  
+}
 image {
   width: 100%;
   height: 100%;

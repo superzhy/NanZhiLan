@@ -119,5 +119,22 @@ Page({
     wx.navigateTo({
       url: '../address/address?type=' + 'my',
     })
+  },
+
+
+  //分享
+  onShareAppMessage:function(e){
+    console.log(e);
+
+    return {
+      title: '南芝兰',
+      path: 'pages/index/index',
+      success: function (res) {
+        // 转发成功
+      },
+      fail: function (res) {
+        // 转发失败
+      }
+    }
   }
 })
