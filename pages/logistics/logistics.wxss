@@ -1,0 +1,141 @@
+page {
+  background: #f1f1f1;
+}
+
+image {
+  width: 100%;
+  height: 100%;
+}
+
+.logistics-h {
+  height: 180rpx;
+  align-items: center;
+}
+
+.logistics-h .goods-img {
+  margin: 0 20rpx;
+  width: 100rpx;
+  height: 100rpx;
+  background: #ddd;
+}
+
+.logistics-h .logistics-info {
+  font-size: 24rpx;
+}
+
+.logistics-h .logistics-info .copy {
+  margin-left: 20rpx;
+  padding: 3rpx 5rpx;
+  border: 1px solid #ddd;
+  border-radius: 5rpx;
+  color: #666;
+  font-size: 22rpx;
+}
+
+.logistics-h .logistics-info .number {
+  align-items: center;
+}
+
+/* 地址 */
+
+.address {
+  border-top: 1px solid #ddd;
+  min-height: 90rpx;
+  padding: 20rpx;
+  align-items: center;
+}
+
+.address .address-icon {
+  width: 34rpx;
+  height: 46rpx;
+  margin-right: 25rpx;
+}
+
+.address-info {
+  font-size: 30rpx;
+  padding: 0 20rpx;
+}
+
+.address-info .address-L {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  word-break: break-all;
+  line-height: 40rpx;
+}
+
+/* 物流跟踪 */
+
+.logistics-track {
+  margin-top: 10rpx;
+}
+
+.track-h {
+  height: 70rpx;
+  padding: 0 20rpx;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.track-h .title {
+  font-size: 28rpx;
+}
+
+.track-h .complain {
+  font-size: 24rpx;
+  color: #c6c6c6;
+}
+
+.track-h .complain text {
+  background: #c1c1c1;
+  width: 30rpx;
+  height: 30rpx;
+  display: inline-block;
+  text-align: center;
+  line-height: 30rpx;
+  border-radius: 50%;
+  color: #f5f5f5;
+}
+
+.track-list {
+  padding: 0 20rpx;
+  border-top: 1px solid #ddd;
+  
+  overflow: hidden;
+}
+
+.track-list .item:first-child .icon {
+  background: #00bb00;
+  border: 3rpx solid #bbffbb;
+}
+.track-list .item:first-child .track-cont {
+  color: #00bb00;
+}
+
+.track-list .item .icon {
+  width: 15rpx;
+  height: 15rpx;
+  border-radius: 50%;
+  background: #ddd;
+  margin-top: 40rpx;
+}
+
+.track-list .track-cont {
+  padding: 30rpx 0rpx;
+  margin-left: 25rpx;
+  border-bottom: 1px solid #ddd;
+  font-size: 26rpx;
+  line-height: 35rpx;
+}
+
+.track-list .track-cont .track-title {
+  margin-bottom: 20rpx;
+}
+
+.logistics-track .option{
+  text-align: center;
+  font-size: 22rpx;
+  line-height: 50rpx;
+  color: #666;
+}

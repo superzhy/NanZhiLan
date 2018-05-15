@@ -1,0 +1,27 @@
+<view class="banner">
+  <image src='../../libs/icon/activity.png'></image>
+</view>
+
+<view class='list' wx:if="{{list.length>0}}">
+  <view class='item flex' wx:for="{{List}}" wx:key bindtap='openDetails' data-activity_id='{{item.activity_id}}'>
+    <view class='goods-img' >
+      <image src='{{item.img_src}}'></image>
+    </view>
+
+    <view class='goods-info flexC'>
+      <view class='goods-title'>
+        {{item.main_title}}
+      </view>
+
+      <view class='goods-prop flex'>
+        <view class='goods-price'>
+          <view class='now-price'>￥{{item.activity_price}}</view>        
+          <view class='old-price'>￥{{item.price}}</view>
+        </view>
+        <view class='btn'>立即夺宝</view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<view class='tips' wx:else>暂无抽奖</view>

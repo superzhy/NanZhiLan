@@ -1,0 +1,89 @@
+page {
+  padding: 20rpx;
+  box-sizing: border-box;
+}
+
+.goods {
+  height: 180rpx;
+  /* padding: 0 20rpx; */
+  align-items: center;
+}
+
+.goods .goods-img {
+  width: 120rpx;
+  height: 120rpx;
+  background: #ddd;
+}
+
+.goods-img image {
+  width: 100%;
+  height: 100%;
+}
+
+.goods .goods-info {
+  flex: 1;
+  margin-left: 25rpx;
+}
+
+.goods .goods-info .goods-title {
+  font-size: 30rpx;
+  line-height: 40rpx;
+  margin-bottom: 10rpx;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  word-break: break-all;
+}
+
+.goods .goods-info .goods-price {
+  font-size: 30rpx;
+}
+
+.comment-cont {
+  height: 170rpx;
+  border: 1px solid #ddd;
+}
+
+.comment-cont textarea {
+  width: 100%;
+  height: 100%;
+  font-size: 30rpx;
+  line-height: 40rpx;
+  padding: 10rpx;
+  box-sizing: border-box;
+}
+.comment-img {
+  margin-top: 20rpx;
+}
+.comment-img .item {
+  display: inline-block;
+  width: 33.3%;
+  background: #f3f3f3;
+  position: relative;
+  vertical-align: middle;
+  text-align: center;
+  font-size: 50rpx;
+  color: #ccc;
+
+}
+
+.comment-img  .item:before {
+  content: "";
+  display: inline-block;
+  padding-bottom: 100%;
+  width: 0.1px;
+  vertical-align: middle;
+}
+
+.btn {
+  text-align: center;
+  line-height: 80rpx;
+  font-size: 32rpx;
+  width: 500rpx;
+  color: #fff;
+  margin: 50rpx auto 0;
+  border-radius: 10rpx;
+
+  background: #f00;
+}

@@ -1,0 +1,221 @@
+page {
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  flex-direction: column;
+  background: #eee;
+}
+image {
+  width: 100%;
+  height: 100%;
+}
+#main {
+  flex: 1;
+  -webkit-box-flex: 1;
+}
+
+.address {
+  background: #fff;
+  /* margin-bottom: 15rpx; */
+}
+
+.userAddress {
+  padding: 30rpx 20rpx;
+  display:-webkit-box;
+  display: -webkit-flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 26rpx;
+}
+
+.userAddress  icon {
+  width: 34rpx;
+  height: 46rpx;
+  margin-right: 20rpx;
+}
+.userAddress .cont {
+  -webkit-box-flex: 1;
+  flex: 1
+}
+.userAddress .name {
+  font-size: 30rpx;
+  font-weight: 600;
+  margin-right: 10rpx;
+}
+
+.userAddress .text {
+  margin-top: 5rpx;
+}
+
+.userAddress .arrow {
+  width: 40rpx;
+  height: 40rpx;
+}
+
+/* .userAddress  */
+
+.addAddress {
+  padding: 0 20rpx; 
+}
+
+.addAddress .item {
+  display: -webkit-box;
+  display: -webkit-flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 80rpx;
+  border-bottom: 1rpx solid #ddd;
+  font-size: 26rpx;
+}
+
+.addAddress .item:last-child {
+  border-bottom: none;
+}
+
+.addAddress .item icon {
+  width: 50rpx;
+  height: 50rpx;
+  background: #fff;
+}
+
+.addAddress .item text {
+  -webkit-box-flex: 1;
+  flex: 1;
+  padding-left: 20rpx;
+}
+
+.addAddress .arrow {
+  width: 40rpx;
+  height: 40rpx;
+  /* background: #ddd; */
+}
+
+.goods {
+  padding: 20rpx 0;
+  margin: 15rpx 0;
+  background: #fff;
+}
+
+.goods .goods-info {
+  padding: 15rpx 20rpx;
+  background: #eee;
+  height: 150rpx;
+  display: -webkit-box;
+  display: -webkit-flex;
+  /* align-items: center; */
+}
+
+.goods .goods-info icon {
+  width: 150rpx;
+  height: 150rpx;
+  background: #fff;
+}
+.goods .goods-info icon image {
+  width: 100%;
+  height: 100%;
+}
+
+.goods .goods-info .cont {
+  margin-left: 20rpx;
+  height: 100%;
+  position: relative;
+}
+
+.goods .goods-info .name {
+  font-size: 30rpx;
+  margin-bottom: 20rpx;
+}
+
+.goods .goods-info .classify {
+  font-size: 20rpx;
+  line-height: 20rpx;
+  margin-bottom: 5rpx;
+}
+
+.goods .goods-info .price {
+  font-size: 30rpx;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.m-num {
+  height: 40rpx;
+  padding: 20rpx 20rpx 0 20rpx;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 24rpx;
+  line-height: 24rpx;
+}
+
+.m-num .num-box {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: felx;
+  line-height: 38rpx;
+}
+
+.m-num .num-box .arrow {
+  width: 40rpx;
+  height: 40rpx;
+  background: #ddd;
+  text-align: center;
+  line-height: 38rpx;
+  padding: 0;
+  border-radius: 0;
+  border: none;
+}
+
+.m-num .num-box .num {
+  height: 40rpx;
+  width: 80rpx;
+  background: #ddd;
+  margin: 0 5rpx;
+  text-align: center;
+}
+button::after{
+border: none;
+}
+
+
+/* 底部 */
+
+#footer {
+  height: 44px;
+  background: #fff;
+  display: -webkit-box;
+  display: -webkit-flex;
+  align-items: center;
+  font-size: 32rpx;
+}
+
+#footer .price {
+  flex: 1;
+  -webkit-box-flex: 1;
+  padding: 0 10rpx;
+  text-align: right;
+  font-size: 24rpx;
+}
+
+#footer .price .cont {
+  font-size: 32rpx;
+  color: red;
+}
+
+#footer .price .freight {
+  color: #de2e25;
+}
+
+#footer .submit-btn {
+  width: 40%;
+  height: 100%;
+  background: #de2e25;
+  color: #fff;
+  font-size: 32rpx;
+  line-height: 44px;
+  border-radius: 0;
+}

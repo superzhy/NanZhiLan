@@ -1,0 +1,51 @@
+<view class='logistics-h flex bg-fff'>
+  <view class='goods-img'>
+    <image src='{{logisticsInfo.img_src}}'></image>  
+  </view>
+  <view class='logistics-info'>
+    <view class='company'>物流公司：{{logisticsInfo.name}}</view>
+    <view class='number flex'>订单编号：<text>{{logisticsInfo.nu}}</text> <view class='copy'>复制</view></view>
+    <view class='phone'>物流电话：{{logisticsInfo.phone}}</view>
+  </view>
+</view>
+
+<!-- 地址 -->
+<view class='address bg-fff flex'>
+  <view class='address-icon'>
+    <image src='../../libs/icon/address-icon.png'></image>
+  </view>
+
+  <view class='address-info flexC'>
+    <view>
+      <text>{{logisticsInfo.address_info.receiving_name}}</text>
+      <text style='margin-left:20rpx;'>{{logisticsInfo.address_info.receiving_phone}}</text>
+    </view>
+
+    <view class='address-L'>{{logisticsInfo.address_info.receiving_address}}</view>
+  </view>
+</view>
+
+<!-- 物流跟踪 -->
+<view class='logistics-track bg-fff'>
+    <view class='track-h flex'>
+        <view class='title'>订单跟踪</view>
+        <view class='complain'>投诉 <text>?</text></view>
+    </view>
+    <view class='track-list bg-fff' style='height:{{trackListH}}'>
+        <view class='item flex' wx:for="{{logisticsInfo.waybill_info}}" wx:key>
+          <view class='icon'></view>
+          <view class='track-cont flexC'>
+            <view class='track-title'>{{item.context}}</view>
+            <view class='track-date'>{{item.time}}</view>
+          </view>
+        </view>
+        <!-- <view class='item flex'>
+          <view class='icon'></view>
+          <view class='track-cont flexC'>
+            <view class='track-title'>签收成功</view>
+            <view class='track-date'>2018-12-12</view>
+          </view>
+        </view> -->
+    </view>
+    <view class='option' bindtap='showTrack' wx:if='{{showOption}}'>展开</view>
+</view>

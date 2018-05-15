@@ -1,0 +1,100 @@
+<view id="header">
+  <view class='user-photo'>
+    <image src='{{avatarUrl}}'></image>
+  </view>
+  <view class='user-info'>
+    <view class='user-name'>{{nickName}}</view>
+    <view class='update-data flex' bindtap='update'>
+      <image src='../../libs/icon/update-data.png'></image>
+      更新数据</view>
+  </view>
+</view>
+
+<view class='order bg-fff'>
+<navigator url='../order/index'>
+  <view class='my-order flex'>
+    <text>我的订单</text>
+    <view class='pull-right flex'>
+      全部订单
+      <image src='../../libs/icon/back2.png'></image>
+    </view>
+  </view>
+  </navigator>
+
+  <view class='order-info flex'>
+    <view class='item' bindtap='showOrder' data-type='1'>
+      <view class='icon'>
+        <image src='../../libs/icon/order01.png'></image>
+      </view>
+      <text>待付款</text>
+
+      <view class='tips' wx:if="{{p>0}}">{{p}}</view>
+    </view>
+    <view class='item' bindtap='showOrder' data-type='2'>
+      <view class='icon'>
+      <image src='../../libs/icon/order02.png'></image>
+      </view>
+      <text>待分享</text>
+      <view class='tips' wx:if="{{s>0}}">{{s}}</view>
+      
+    </view>
+    <view class='item' bindtap='showOrder' data-type='3'>
+      <view class='icon'>
+      <image src='../../libs/icon/order03.png'></image>
+      </view>
+      <text>待发货</text>
+      <view class='tips' wx:if="{{y>0}}">{{y}}</view>
+      
+    </view>
+    <view class='item' bindtap='showOrder' data-type='4'>
+      <view class='icon'>
+      <image src='../../libs/icon/order04.png'></image>
+      </view>
+      <text>待收货</text>
+      <view class='tips' wx:if="{{f>0}}">{{f}}</view>
+      
+    </view>
+    <view class='item' bindtap='showOrder' data-type='5'>
+      <view class='icon'>
+      <image src='../../libs/icon/order05.png'></image>
+      </view>
+      <text>待评价</text>
+      <view class='tips' wx:if="{{w>0}}">{{w}}</view>      
+    </view>
+  </view>
+</view>
+
+
+<!-- list -->
+<view class='my-list bg-fff'>
+  <view class='item flex'>
+    <view class='icon'>
+      <image src='../../libs/icon/mylist01.png' style="width:43rpx;height:49rpx;"></image>
+    </view>
+    <text class='flexC'>分享好友</text>
+    <view class='pull-right'>
+    <image src='../../libs/icon/back2.png'></image>
+    </view>
+  </view>
+  <view class='item flex' bindtap='showAddress'>
+    <view class='icon'><image src='../../libs/icon/mylist02.png'></image></view>
+    <text class='flexC'>收货地址</text>
+    <view class='pull-right'>
+    <image src='../../libs/icon/back2.png'></image>
+    </view>
+  </view>
+  <view class='item flex'>
+    <view class='icon'><image src='../../libs/icon/mylist03.png'></image></view>
+    <text class='flexC'>官方客服</text>
+    <view class='pull-right'>
+    <image src='../../libs/icon/back2.png'></image>
+    </view>
+  </view>
+  <view class='item flex' bindtap='openSetting'>
+    <view class='icon'><image src='../../libs/icon/mylist04.png'></image></view>
+    <text class='flexC'>设置</text>
+    <view class='pull-right'>
+    <image src='../../libs/icon/back2.png'></image>
+    </view>
+  </view>
+</view>

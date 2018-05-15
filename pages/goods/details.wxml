@@ -1,0 +1,233 @@
+ <wxs module="dateFr" src="../../filter/dateFr.wxs"></wxs>
+<scroll-view scroll-y="true" style="height: {{windowHeight-45}}px;">
+  <view id='main'>
+    <swiper class='banner' indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" indicator-dots="true">
+      <swiper-item wx:for="{{imgUrls}}" wx:key>
+        <image src="{{item}}" class="slide-image" />
+      </swiper-item>
+
+    </swiper>
+
+    <view class='goods-info'>
+      <!-- 价格 -->
+      <view class='price-bar'>
+        <view class='left'>
+          <view class='price'>
+            <text class='now-price'>¥{{goods.product.discount_price}}</text>
+            <text class='old-price'>¥{{goods.product.price}}</text>
+          </view>
+          <view class='tuan'>已团4467003件</view>
+        </view>
+
+        <button class='right share' open-type='share'>
+          <image class='icon' src='../../libs/icon/share.png'></image>
+          <!-- <view class='name'>分享</view> -->
+          <text class='name'>分享</text>
+        </button>
+      </view>
+
+      <!-- 商品名字  -->
+      <view class='goods-name'>
+        {{goods.product.name}}
+      </view>
+    </view>
+
+    <!-- 商品拼团 -->
+    <view class='goods-group'>
+      <view class='title-bar' bindtap='showGroup'>
+        <view class='title'>小伙伴在开团，可直接参与</view>
+        <view class='sub' wx:if="{{groupList.length>2}}">查看更多</view>
+        <image class='arrow' src='../../libs/icon/back2.png'></image>
+      </view>
+      <view class='list'>
+        <view class='item flex' wx:for="{{groupList}}" wx:key wx:if="{{index<2}}">
+          <view class='user-photo'>
+            <image src='{{item.avatarUrl}}'></image>
+          </view>
+          <view class='user-name'>{{item.nickname}}</view>
+          <view class='cont'>
+            <view>还差<text style='color:red;'>{{item.surplus_person_num}}人</text>拼成</view>
+            <view>{{dateFr.getDate(item.invalid_time,':')}}截止</view>
+          </view>
+          <view class='btn' data-type='group' data-spell_order_id="{{item.spell_order_id}}" bindtap='showModal'>去参团</view>
+        </view>
+      </view>
+    </view>
+
+    <view class='commodity_screen' wx:if="{{showGroup}}"></view>
+    <view class='goods-group-model' wx:if="{{showGroup}}">
+      <view class='close' bindtap='hiddenGroup'>X</view>
+      <view class='title'>正在开团</view>
+      <view class='list'>
+        <view class='item flex' wx:for="{{groupList}}" wx:key>
+          <view class='user-photo'>
+            <image src='{{item.avatarUrl}}'></image>
+          </view>
+          <view class='cont'>
+            <view class='top flex'>
+              <view class='user-name'>{{item.nickname}}</view>
+              <view>还差{{item.surplus_person_num}}人</view>
+            </view>
+            <view>{{dateFr.getDate(item.invalid_time,':')}}截止</view>
+          </view>
+          <view class='btn' data-type='group' data-spell_order_id="{{item.spell_order_id}}" bindtap='showModal'>去参团</view>
+        </view>
+      </view>
+    </view>
+
+
+    <!-- 商品评价 -->
+    <view class='goods-comment' bindtap='showComment' id='{{goodsId}}'>
+      <view class='title-bar '>
+        <view class='title'>商品评价</view>
+        <view class='sub'>全部评价</view>
+        <image class='arrow' src='../../libs/icon/back2.png'></image>
+      </view>
+
+      <view class='tab-bar flex'>
+        <view class='item' wx:for="{{commentWord}}" wx:key >{{item.key}}{{item.value}}</view>
+      </view>
+
+      <view class='list'>
+        <view class='item'  wx:for="{{comment}}" wx:key="index"  wx:if="{{index<2}}">
+          <view class='top'>
+            <view class='icon'>
+              <image src='{{item.avatarUrl}}'></image>
+            </view>
+            <view class='name'>{{item.nickname}}</view>
+          <view class='date'>{{item.created_at}}</view>
+          </view>
+          <view class='cont'>
+            <view class='text'>
+              {{item.comment_value}}
+            </view>
+
+            <view class='img-list flex'>
+              <view class='img-item' wx:for="{{item.img}}" wx:key style="background-image: url({{item}});background"></view>
+            </view>
+          </view>
+          <view class='bottom'>类别：{{item.type}}  {{item.spec}}</view>
+        </view>
+      </view>
+    </view>
+
+
+    <!-- 店铺 -->
+    <!-- <view class='shop'>
+    <view class='icon'></view>
+    <view class='cont'>
+      <view class='name'>店铺名字</view>
+      <view class='other'>其他信息</view>
+    </view>
+    <view class='open'>进店逛逛</view>
+  </view> -->
+
+    <!-- 详情 -->
+    <view class='details'>
+      <view class='title'>商品详情</view>
+      <view class='cont'></view>
+    </view>
+  </view>
+</scroll-view>
+<!-- 底部 -->
+<view id='footer'>
+  <view class='item'>
+    <image class='icon' src='../../libs/icon/home.png'></image>
+    <view class='text'>首页</view>
+  </view>
+  <view class='item'>
+    <image class='icon' src='../../libs/icon/sc.png'></image>
+    <view class='text'>收藏</view>
+  </view>
+  <view class='item'>
+    <image class='icon' src='../../libs/icon/cat.png'></image>
+    <view class='text'>客服</view>
+  </view>
+  <view class='alone' data-type='alone' bindtap='showModal'>
+    <view class='price'>¥9.9</view>
+    <view class='text'>单独购买</view>
+  </view>
+  <view class='group' data-type='group' bindtap='showModal'>
+    <view class='price'>¥9.9</view>
+    <view class='text'>一键开团</view>
+  </view>
+</view>
+
+
+<!-- 弹窗 -->
+<view class="commodity_screen" bindtap="hideModal" wx:if="{{showModalStatus}}"></view>
+<view animation="{{animationData}}" class="commodity_attr_box" wx:if="{{showModalStatus}}">
+  <view class='model-goods-info'>
+    <view class='icon'>
+      <image src='{{goodsImg}}' style='width:100%;height:100%'></image>
+    </view>
+    <view class='left'>
+      <view class='price'>￥{{sPrice}}</view>
+      <view class='select-goods'>
+        <text>{{sClassify1}}</text>
+        <text>{{sClassify2}}</text>
+      </view>
+    </view>
+  </view>
+
+  <view class='m-classify'>
+    <view class='title'>{{goods.product.type_title_name}}</view>
+    <view class='m-classify-cont'>
+      <view class="item {{item.isChecked ? 'item-checked' : ''}}" wx:for="{{goodsList}}" wx:key bindtap='classifyOne' data-index='{{index}}' data-id='{{item.id}}'>{{item.name}}</view>
+    </view>
+  </view>
+  <view class='m-classify'>
+    <view class='title'>{{goods.product.spec_title_name}}</view>
+    <view class='m-classify-cont'>
+      <view class="item {{item.isChecked ? 'item-checked' : ''}}" wx:for="{{specList}}" wx:key bindtap='classifyTwo' data-index='{{index}}' data-id='{{item.id}}'>{{item.name}}</view>
+    </view>
+  </view>
+
+  <view class='m-num'>
+    <view class='title'>数量</view>
+    <view class='num-box'>
+      <button class='arrow' bindtap='numReduce'>-</button>
+      <view class='num'>{{sClassifyNum}}</view>
+      <button class='arrow' bindtap='numAdd'>+</button>
+    </view>
+  </view>
+
+
+  <view class='submit-btn' bindtap='submit'>确定</view>
+</view>
+
+<!-- modal弹窗 -->
+<!-- <view class='modal' animation="{{animationData}}" wx:if="{{showModalStatus}}">
+  <view class='modal-title'>
+    <view class="goods-img">
+    </view>
+    <view class='goods-info'>
+      <view class="goods-price">¥</view>
+      <view class='goods-type'></view>
+    </view>
+  </view>
+
+  <view class="modal-body">
+    <view class='prop'>
+      <view class="prop-name">类型</view>
+       <text class="{{item.isChecked ? 'item-checked' : ''}}" wx:for="{{goodsList}}">{{item.name}}</text>
+    </view>
+    <view class='prop'>
+      <view class="prop-name">类型</view>
+       <block wx:for="{{specListL}}">
+          <text>{{item.name}}</text>
+      </block> 
+    </view>
+  </view>
+  <view class='number'>
+    <view class='title'>数量</view>
+    <view class='num-box'>
+      <button class='arrow' bindtap='numReduce'>-</button>
+      <view class='num'>{{sClassifyNum}}</view>
+      <button class='arrow' bindtap='numAdd'>+</button>
+    </view>
+  </view>
+  <view class="modal-footer">
+		<view class="btn" bindtap="goToBuy">确定</view>
+	</view>
+</view> -->

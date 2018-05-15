@@ -1,0 +1,33 @@
+<scroll-view scroll-y="true" style="height: {{windowHeight-45}}px;">
+    <swiper class='banner' indicator-dots="true">
+      <swiper-item  wx:for="{{imglist}}" wx:key>
+        <image src='{{item}}'></image>
+      </swiper-item>
+
+    </swiper>
+
+
+    <view class='goods'>
+        <view class='goods-title'>{{goods.main_title}}</view>
+        <view class='goods-price flex'>
+          <view class='now-price'>￥{{goods.activity_price}}</view>
+          <view class='old-price'>￥{{goods.price}}</view>
+        </view>
+    </view>
+
+
+    <view class='rules bg-fff'>
+        <view class='title'>1分钱抽奖活动规则</view>
+        <view class='cont'>
+        {{goods.activity_rule}}
+        </view>
+    </view>
+
+    <view class='goods-details bg-fff'>
+      <view class='title'>商品详情</view>
+    </view>
+</scroll-view>
+
+<view id='footer' bindtap='toPay'>
+  立即抽奖
+</view>

@@ -1,0 +1,69 @@
+<view id='main'>
+  <view class='address'>
+    <view class='addAddress' wx:if="{{address.length==0}}">
+      <view class='item' bindtap='getWechatAddress'>
+        <icon>
+          <image src='../../libs/icon/weChat.png'></image>
+        </icon>
+        <text>一键获取微信地址</text>
+        <view class='arrow'>
+          <image src='../../libs/icon/back2.png'></image>
+        </view>
+      </view>
+    </view>
+
+    <view class='userAddress' wx:else data-id='{{sAddress.id}}'  bindtap='openAddressList'>
+      <icon>
+        <image src='../../libs/icon/address-icon.png'></image>
+      </icon>
+      <view class='cont'>
+        <view>
+          <text class='name'>{{sAddress.receiving_name}}</text>
+          <text>{{sAddress.receiving_phone}}</text>
+        </view>
+        <view class='text'>
+            {{sAddress.receiving_address}}
+        </view>
+      </view>
+      <view class='arrow'><image src='../../libs/icon/back2.png'></image></view>
+    </view>
+  </view>
+
+  <view class='goods'>
+    <view class='goods-info'>
+      <icon>
+        <image src='{{data.goodsImg}}'></image>
+      </icon>
+      <view class='cont'>
+        <view class='name'>{{data.goodsName}}</view>
+        <view class='classify'>{{goods.product.type_title_name}} {{data.sClassify1}}</view>
+        <view class='classify'>{{goods.product.spec_title_name}} {{data.sClassify2}}</view>
+        <view class='price'>￥{{data.sPrice}}</view>
+      </view>
+    </view>
+
+    <view class='m-num'>
+      <view class='title'>购买数量</view>
+       
+
+
+      <view class='num-box' wx:if="{{data.orderType==1002||data.orderType==1003}}">
+        <view class='num' style='background:#fff'>x1</view>
+      </view> 
+      <view class='num-box' wx:else>
+        <button class='arrow' bindtap='numReduce'>-</button>
+        <view class='num'>{{sClassifyNum}}</view>
+        <button class='arrow' bindtap='numAdd'>+</button>
+      </view> 
+    </view>
+  </view>
+
+</view>
+
+<view id='footer'>
+  <view class='price'>实付款:
+    <text class='cont'>￥{{totalPrice}}</text>
+    <text class='freight'>免运费</text>
+  </view>
+  <button class='submit-btn' bindtap='submit' loading='{{btnLoading}}' disabled='{{btnDisabled}}'>立即支付</button>
+</view>

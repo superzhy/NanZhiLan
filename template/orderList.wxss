@@ -1,0 +1,134 @@
+button {
+  padding: 0;
+  line-height: normal;
+  border: none;
+}
+image {
+  width: 100%;
+  height: 100%;
+}
+.order-group {
+  margin-bottom: 10rpx;
+}
+
+.order-h {
+  padding: 0 20rpx;
+  height: 85rpx;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.order-h .order-shop {
+  align-items: center;
+}
+
+.order-h .order-shop .icon {
+  width: 55rpx;
+  height: 55rpx;
+  background: #222;
+}
+
+.order-h .order-shop text {
+  margin: 0 20rpx;
+  font-size: 32rpx;
+}
+
+.order-h .order-shop .arrow {
+  width: 14rpx;
+  height: 27rpx;
+}
+
+.order-h .order-type {
+  font-size: 32rpx;
+  color: #e02e24;
+}
+
+.order-goods {
+  height: 200rpx;
+  background: #f2f2f2;
+  padding: 20rpx;
+  box-sizing: border-box;
+}
+
+.order-goods .goods-img {
+  width: 160rpx;
+  height: 160rpx;
+  background: #222;
+}
+
+.order-goods .goods-info {
+  margin-left: 20rpx;
+  justify-content: space-between;
+}
+
+.order-goods .goods-info_left {
+  width: 80%;
+}
+
+.order-goods .goods-info_right {
+  text-align: center;
+}
+
+.order-goods .goods-info .goods-title {
+  font-size: 32rpx;
+  line-height: 40rpx;
+  margin-bottom: 10rpx;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  word-break: break-all;
+}
+
+.order-goods .goods-info .goods-prop {
+  font-size: 26rpx;
+  color: #949495;
+}
+
+.order-goods .goods-info .goods-price {
+  font-size: 32rpx;
+}
+
+.order-goods .goods-info .goods-num {
+  font-size: 26rpx;
+  color: #949495;
+}
+
+.order-price {
+  padding: 0 20rpx;
+  height: 85rpx;
+  line-height: 85rpx;
+  text-align: right;
+  font-size: 30rpx;
+  border-bottom: 1px solid #ddd;
+}
+
+.order-price text{
+  font-size: 32rpx;
+}
+
+.order-group .user-option {
+  height: 85rpx;
+  align-items: center;
+  padding: 0 20rpx;
+}
+.order-group .user-option .item {
+  font-size: 30rpx;
+  margin-left: 10rpx;
+  padding: 5rpx 10rpx;
+  border: 1px solid #ddd;
+   border-radius: 5rpx; 
+}
+
+.node-orders {
+  padding-top: 50rpx;
+  text-align: center;
+}
+.node-orders image {
+  width: 200rpx;
+  height: 200rpx;
+}
+
+.node-orders .text {
+  font-size: 32rpx;
+}

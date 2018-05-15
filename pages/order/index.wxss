@@ -1,0 +1,140 @@
+@import "../../template/orderList.wxss";
+
+page {
+  background: #f4f4f4;
+  height: 100%;
+}
+
+.search-bar {
+  position: relative;
+   padding: 0 10px; 
+  height: 46px;
+  align-items: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  box-sizing: border-box;
+  /* border-top:1px solid  #e6e6ea;
+  border-bottom:1px solid  #e6e6ea; */
+}
+
+.search-bar_form {
+  position: relative;
+  -webkit-box-flex: 1;
+  -webkit-flex: auto;
+  flex: auto;
+  border-radius: 5px;
+  background: #fff;
+  /* border: 1rpx solid #e6e6ea; */
+}
+
+.search-bar_box {
+  position: relative;
+  padding-left: 30px;
+  padding-right: 30px;
+  width: 100%;
+  box-sizing: border-box;
+  z-index: 1;
+}
+
+.icon-search_in-box {
+  position: absolute;
+  left: 10px;
+  top: 7px;
+}
+
+.search-bar_input {
+  height: 28px;
+  line-height: 28px;
+  font-size: 14px;
+}
+
+.icon-clear {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 7px 8px;
+  font-size: 0;
+}
+
+.search-bar_label {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 2;
+  border-radius: 3px;
+  text-align: center;
+  color: #9b9b9b;
+  background: #fff;
+  line-height: 28px;
+}
+
+.icon-search {
+  margin-right: 8px;
+  font-size: inherit;
+}
+
+.search-bar_text {
+  display: inline-block;
+  font-size: 14px;
+  vertical-align: middle;
+}
+
+.search-bar_cancel-btn {
+  margin-left: 10px;
+  font-size: 16px;
+  line-height: 28px;
+  color: #666;
+  white-space: nowrap;
+}
+
+.tab-h {
+  height: 40px;
+  width: 100%;
+  box-sizing: border-box;
+  /* overflow: hidden; */
+  line-height: 40px;
+  background: #fff;
+  font-size: 16px;
+  white-space: nowrap;
+  /* position: fixed;
+  top: 46px;
+  left: 0;
+  z-index: 99; */
+  color: #444;
+  border-bottom: 1rpx solid #f4f4f4;
+}
+
+.tab-item {
+  margin: 0 20rpx;
+  display: inline-block;
+  /* height: 77rpx; */
+}
+
+.tab-item.active {
+  color: #4675f9;
+  position: relative;  
+  /* border-bottom: 2px solid red; */
+}
+
+ .tab-item.active:after {
+  content: "";
+  display: block;
+  height: 2px;
+  width: 100%;
+  background: #4675f9;
+  position: absolute;
+  bottom: 0;
+} 
+
+.scoll-h {
+  height: 100%;
+  padding: 10rpx 0;
+  box-sizing: border-box;
+}
+/* 搜索内容 */
+
+.search-cont {
+  background: #fff;
+}

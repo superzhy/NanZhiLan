@@ -1,0 +1,23 @@
+<view class="goods flex">
+  <view class='goods-img'>
+    <image src='{{goodsInfo.img_src}}'></image>
+  </view>
+  <view class='goods-info'>
+    <view class='goods-title'>{{goodsInfo.main_title}}</view>
+    <view class='goods-price'>￥{{price}}</view>
+  </view>
+</view>
+
+<view class='comment-cont'>
+  <textarea placeholder='请填写评论' bindinput='commentCont'></textarea>
+</view>
+
+<view class='comment-img'>
+  <view class='item' wx:for="{{upImg}}" wx:key style="background-image:url({{item}})">
+  </view>
+  <view class='item' bindtap='upImg' wx:if="{{upImg.length<6}}">
+    <text>+</text>
+  </view>
+</view>
+
+<view class='btn' bindtap='sumbit'>发布评论</view>

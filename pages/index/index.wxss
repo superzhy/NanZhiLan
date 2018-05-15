@@ -1,0 +1,132 @@
+/**index.wxss**/
+
+page {
+  width: 100%;
+  height: 100%;
+  font-size: 24rpx;
+}
+
+#main {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+#main .pindan-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100rpx;
+  background: #fff;
+  border-bottom: 1rpx solid #bbb;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 0 20rpx;
+  display: none;
+}
+
+#main .banner {
+  height: 480rpx;
+  width: 100%;
+}
+
+#main .banner image {
+  width: 100%;
+  height: 100%;
+}
+
+#main .top-bar {
+  padding: 30rpx;
+}
+
+#main .top-bar .select-bar {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  justify-content: space-between;
+}
+
+#main .top-bar .select-bar .item {
+  width: 48%;
+  height: 200rpx;
+  background: #ddd;
+}
+#main .top-bar .select-bar .item image {
+  width: 100%;
+  height: 100%;
+}
+
+.margin-bar {
+  height: 40rpx;
+  background: #f5f5f5;
+}
+
+.margin-bar .lin {
+  height: 100%;
+  width: 10rpx;
+  background: #000;
+}
+
+.goods-list {
+  padding: 30rpx;
+}
+
+.goods-list .goods-item {
+  width: 100%;
+  height: 350rpx;
+  /* background: #0078d7; */
+  background: #bbb;
+  border-top-left-radius: 30rpx;
+  border-top-right-radius: 30rpx;
+  border: 1rpx solid #ddd;
+  position: relative;
+  margin-bottom: 50rpx;
+}
+.goods-list .goods-item:last-child{
+  margin-bottom: 0;
+}
+
+.goods-list .goods-item image {
+  width: 100%;
+  height: 100%;
+  border-top-left-radius: 30rpx;
+  border-top-right-radius: 30rpx;
+}
+
+.goods-list .goods-item .goods-info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 40rpx;
+  padding: 20rpx 0;
+  background: rgba(255, 255, 255, 0.6);
+  display: -webkit-flex;
+  display: -webkit-box;
+  display: flex;
+  align-items: center;
+  font-size: 30rpx;
+}
+
+.goods-list .goods-info .lin {
+  width: 10rpx;
+  height: 100%;
+  background: pink;
+}
+
+.goods-list .goods-info .name {
+  margin: 0 20rpx;
+  color: #222;
+  max-width: 400rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.goods-list .goods-info .price {
+  color: #f75415;
+}

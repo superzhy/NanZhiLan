@@ -1,0 +1,82 @@
+<import src="../../template/orderList.wxml" />
+<view class='search-bar'>
+  <view class='search-bar_form'>
+    <view class='search-bar_box'>
+      <icon class='icon-search_in-box' type='search' size='14'></icon>
+      <input type='text' class='search-bar_input' placeholder='搜索' value="{{inputVal}}" focus="{{inputShowed}}" bindinput="inputTyping"></input>
+      <view class="icon-clear" wx:if="{{inputVal.length > 0}}" bindtap="clearInput">
+        <icon type="clear" size="14"></icon>
+      </view>
+    </view>
+    <label class="search-bar_label" hidden="{{inputShowed}}" bindtap="showInput">
+      <icon class="icon-search" type="search" size="14"></icon>
+      <view class="search-bar_text">搜索</view>
+    </label>
+  </view>
+  <view class="search-bar_cancel-btn" hidden="{{!inputShowed}}" bindtap="hideInput">取消</view>
+</view>
+
+
+ <view class='order-cont' wx:if="{{orderShowed}}">
+  <scroll-view scroll-x='true' class='tab-h' scroll-left="{{scrollLeft}}">
+    <view class="tab-item {{currentTab==0?'active':''}}" data-current='0' bindtap='changeNav'>全部</view>
+    <view class="tab-item {{currentTab==1?'active':''}}" data-current='1' bindtap='changeNav'>待付款</view>
+    <view class="tab-item {{currentTab==2?'active':''}}" data-current='2' bindtap='changeNav'>待分享</view>
+    <view class="tab-item {{currentTab==3?'active':''}}" data-current='3' bindtap='changeNav'>待发货</view>
+    <view class="tab-item {{currentTab==4?'active':''}}" data-current='4' bindtap='changeNav'>待收货</view>
+    <view class="tab-item {{currentTab==5?'active':''}}" data-current='5' bindtap='changeNav'>待评价</view>
+  </scroll-view>
+  <swiper class="tab-content" current="{{currentTab}}" duration="300" bindchange="changeTab" style="height:{{winHeight}}px">
+    <swiper-item wx:for="{{[0,1,2,3,4,5]}}" wx:key>
+      <scroll-view scroll-y="true" class="scoll-h">
+        <template is="orderList" data="{{orderList}}"></template>
+      </scroll-view>
+    </swiper-item>
+  </swiper>
+</view> 
+
+<scroll-view scroll-y="true" style="height:{{winHeight}}px;" class='search-cont' wx:else>
+<view>fsdfdsf</view>
+<view>fsdfdsf</view>
+<view>fsdfdsf</view>
+<view>fsdfdsf</view>
+<view>fsdfdsf</view>
+<view>fsdfdsf</view>
+<view>fsdfdsf</view>
+<view>fsdfdsf</view>
+<view>fsdfdsf</view>
+<view>fsdfdsf</view>
+<view>fsdfdsf</view>
+<view>fsdfdsf</view>
+<view>fsdfdsf</view>
+<view>fsdfdsf</view>
+<view>fsdfdsf</view>
+<view>fsdfdsf</view>
+<view>fsdfdsf</view>
+<view>fsdfdsf</view>
+<view>fsdfdsf</view>
+<view>fsdfdsf</view>
+<view>fsdfdsf</view>
+<view>fsdfdsf</view>
+<view>fsdfdsf</view>
+<view>fsdfdsf</view>
+<view>fsdfdsf</view>
+<view>fsdfdsf</view>
+<view>fsdfdsf</view>
+<view>fsdfdsf</view>
+<view>fsdfdsf</view>
+<view>fsdfdsf</view>
+<view>fsdfdsf</view>
+<view>fsdfdsf</view>
+<view>fsdfdsf</view>
+<view>fsdfdsf</view>
+<view>fsdfdsf</view>
+<view>fsdfdsf</view>
+<view>fsdfdsf</view>
+<view>fsdfdsf</view>
+<view>fsdfdsf</view>
+<view>fsdfdsf</view>
+<view>fsdfdsf</view>
+<view>fsdfdsf</view>
+<view>fsdfdsf</view>
+</scroll-view>

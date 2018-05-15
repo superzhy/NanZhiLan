@@ -1,0 +1,50 @@
+<view id="header">
+  <view class='user-photo'>
+     <image src='{{data.initiator_info.avatarUrl}}'></image> 
+  </view>
+  <view class='title'>发现一个好货帮TA砍到最低价吧</view>
+
+  <view class='goods flex bg-fff'>
+    <view class='goods-img'>
+      <image src='{{data.product_info.img_src}}'></image>
+    </view>
+    <view class='goods-info'>
+      <view class='goods-title'>{{data.product_info.main_title}}</view>
+      <view class='goods-price flex'>
+        <view class='old-price'>原价 ￥{{data.product_info.price}}</view>
+        <view class='now-price'>当前价 ￥{{data.initiator_info.pay_price}}</view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<view id='main'>
+  <view class='cont'>
+    <view class='title'>帮砍
+      <text style='color:#fa4756;'>{{data.initiator_info.bargain_price}}</text>元,还能再砍{{data.initiator_info.surplus_price}}元</view>
+    <view class='tips'>还剩00.00.00结束，赶快砍价</view>
+
+    <view class='option flex'>
+      <button class='item share' open-type="share">分享小伙伴</button>
+      <view class='item pay' bindtap='pay'>我要提货</view>
+    </view>
+  </view>
+
+  <view class='list'>
+    <view class='title'>
+      我的砍价帮
+    </view>
+    <view class='item flex' wx:for="{{data.list}}" wx:key>
+      <view class='user-photo'>
+        <image src='{{item.avatarUrl}}'></image>
+      </view>
+      <view class='cutdwon-info flexC'>
+        <view class='cutdwon-info_t flex'>
+          <view class='phone'>{{item.nickname}}</view>
+          <view class='price'>帮砍{{item.bargain_price}}元</view>
+        </view>
+        <view class='time'>{{item.created_at}}</view>
+      </view>
+    </view>
+  </view>
+</view>

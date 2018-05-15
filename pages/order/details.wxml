@@ -1,0 +1,127 @@
+<view id='main'>
+  <scroll-view class='mian-scroll' style='height:100%'>
+    <view class="details-h flex">
+      <view class='order-status' wx:if="{{orderInfo.order_state=='Y'}}">订单待发货</view>
+      <view class='order-status' wx:elif="{{orderInfo.order_state=='F'}}">订单待收货</view>
+      <view class='order-status' wx:elif="{{orderInfo.order_state=='W'}}">订单待评价</view>
+      <view class='order-status' wx:elif="{{orderInfo.order_state=='S'}}">订单待分享</view>
+      <view class='order-status' wx:elif="{{orderInfo.order_state=='O'}}">订单已完成</view>
+      <view class='order-status' wx:elif="{{orderInfo.order_state=='C'}}">订单已取消</view>
+      <view class='order-status' wx:elif="{{orderInfo.order_state=='Z'}}">待开奖</view>
+      <view class='order-status' wx:else>订单未支付</view>
+      <image src='../../libs/icon/order-status.png'></image>
+    </view>
+
+    <view class='address bg-fff flex'>
+      <view class='address-icon'>
+        <image src='../../libs/icon/address-icon.png'></image>
+      </view>
+
+      <view class='address-info flexC'>
+        <view>
+          <text>{{orderInfo.address_info.receiving_name}}</text>
+          <text>{{orderInfo.address_info.receiving_phone}}</text>
+        </view>
+
+        <view class='address-L'>{{orderInfo.address_info.receiving_address}}</view>
+      </view>
+    </view>
+
+
+    <view class='order-group bg-fff'>
+      <view class='order-h flex'>
+        <view class='order-shop flex'>
+          <view class='icon'></view>
+          <text>店铺名字</text>
+          <image src='../../libs/icon/arrow-right.png' class='arrow'></image>
+        </view>
+        <view class='order-type' wx:if="{{orderInfo.order_state=='Y'}}">待发货</view>
+        <view class='order-type' wx:elif="{{orderInfo.order_state=='F'}}">待收货</view>
+        <view class='order-type' wx:elif="{{orderInfo.order_state=='W'}}">待评价</view>
+        <view class='order-type' wx:elif="{{orderInfo.order_state=='S'}}">待分享</view>
+        <view class='order-type' wx:elif="{{orderInfo.order_state=='O'}}">已完成</view>
+        <view class='order-type' wx:elif="{{orderInfo.order_state=='C'}}">已取消</view>
+        <view class='order-type' wx:elif="{{orderInfo.order_state=='Z'}}">待开奖</view>
+        <view class='order-type' wx:else>未支付</view>
+      </view>
+      <view class='order-goods flex' bindtap='showGoodsDetails' id="{{orderInfo.product_info.pid}}" data-order_type='{{orderInfo.order_type}}'>
+        <view class='goods-img'>
+          <image src='{{orderInfo.product_info.img_src}}'></image>
+        </view>
+        <view class='goods-info flexC flex'>
+          <view class='goods-info_left'>
+            <view class='goods-title'>{{orderInfo.product_info.main_title}}</view>
+            <view class='goods-prop'>{{orderInfo.product_info.type_name}} {{orderInfo.product_info.spec_name}}</view>
+          </view>
+          <view class='goods-info_right'>
+            <view class='goods-price'>￥{{orderInfo.price}}</view>
+            <!-- <view class='goods-price-old'>￥23</view> -->
+            <view class='goods-num'>X{{orderInfo.buy_num}}</view>
+          </view>
+        </view>
+      </view>
+      <view class='order-price'>实付:￥
+        <text>{{orderInfo.total_price}}</text>(免运费)</view>
+      <view class='user-option flex'>
+        <view class='item flexC msg flex'>
+          <image src='../../libs/icon/order-msg.png'></image>
+          联系卖家
+        </view>
+        <view class='item flexC phone flex'>
+          <image src='../../libs/icon/order-phone.png'></image>
+          联系卖家
+        </view>
+      </view>
+    </view>
+
+    <view class='order-info bg-fff'>
+      <view>订单编号：{{orderInfo.order_num}}</view>
+      <view>支付方式：微信</view>
+      <view>下单时间：{{orderInfo.created_at}}</view>
+    </view>
+  </scroll-view>
+
+</view>
+
+
+<!-- <view id='footer' class='flex'>
+  <view class='flexC'></view>
+  <view class='item'>去支付</view>
+  <view class='item'>取消订单</view>
+</view> -->
+
+<view id='footer' class='user-option flex' wx:if="{{orderInfo.order_state=='Y'}}">
+  <view class='flexC'></view>
+  <view class='item' bindtap='remindShipments'>提醒发货</view>
+</view>
+<view  id='footer'  class='user-option flex' wx:elif="{{orderInfo.order_state=='F'}}">
+  <view class='flexC'></view>
+  <view class='item' bindtap='showLogistics' id='{{orderInfo.id}}'>查看物流</view>
+</view>
+<view  id='footer' class='user-option flex' wx:elif="{{orderInfo.order_state=='W'}}">
+  <view class='flexC'></view>
+  <view class='item' bindtap='showComment' data-id="{{orderInfo.id}}" data-saleid="{{orderInfo.sale_id}}" data-price='{{orderInfo.total_price}}' data-goodsInfo='{{orderInfo.product_info}}'>去评价</view>
+</view>
+<view  id='footer' class='user-option flex' wx:elif="{{orderInfo.order_state=='S'}}">
+  <view class='flexC'></view>
+  <button class='item' open-type="share" style='border:none' data-spell_order_id='{{orderInfo.detail_id}}' data-pid="{{orderInfo.product_info.pid}}">分享</button>
+</view>
+
+<view  id='footer' class='user-option flex' wx:elif="{{orderInfo.order_state=='O'}}">
+  <view class='flexC'></view>
+  <view class='item' bindtap='showLogistics' id='{{orderInfo.id}}'>查看物流</view>
+  <view class='item'>再次购买</view>
+</view>
+<view  id='footer' class='user-option flex' wx:elif="{{orderInfo.order_state=='C'}}">
+  <view class='flexC'></view>
+  <view class='item'>删除订单</view>
+</view>
+<view  id='footer' class='user-option flex' wx:elif="{{orderInfo.order_state=='Z'}}">
+  <view class='flexC'></view>
+</view>
+<view  id='footer' class='user-option flex' wx:else>
+  <view class='flexC'></view>
+  <view class='item' bindtap='closeOrder' id='{{orderInfo.id}}'>取消订单</view>
+  <view class='item' bindtap='toPay' data-price="{{orderInfo.price}}" data-order_type="{{orderInfo.order_type}}" id='{{orderInfo.id}}'>去支付</view>
+  <!-- bindtap='toPay' data-price="{{item.price}}" data-order_type='{{item.order_type}}' id='{{item.id}}' -->
+</view>

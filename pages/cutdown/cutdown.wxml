@@ -1,0 +1,75 @@
+ <wxs module="dateFr" src="../../filter/dateFr.wxs"></wxs>
+<view id='main'>
+  <scroll-view scroll-y='true' style='height:100%' class='all-cutdown' wx:if="{{showALL}}" bindscrolltoupper="refreshAll">
+    <view class='banner'>
+      <image src='../../libs/icon/cutdown.jpg'></image>
+    </view>
+    <view class='list bg-fff'>
+
+
+
+
+
+
+      <view class='item flex' wx:for="{{list}}" wx:key data-bargain_id="{{item.bargain_id}}" bindtap='showcutdownDetails'>
+        <view class='goods-img'>
+          <image src='{{item.img_src}}'></image>
+        </view>
+        <view class='goods-info'>
+          <view class='goods-title'>{{item.main_title}}</view>
+          <view class='num'>{{item.success_num}}人{{item.baseline_price}}元拿</view>
+          <view class='goods-prop flex'>
+            <view class='goods-price'>
+              <view class='old-price'>价值{{item.price}}元</view>
+              <view class='now-price'>特惠价{{item.baseline_price}}元</view>
+            </view>
+
+            <view class='btn'>去砍价</view>
+          </view>
+        </view>
+      </view>
+
+
+
+    </view>
+  </scroll-view>
+
+
+  <!-- 我的砍价  -->
+  <scroll-view scroll-y='true' style='height:100%' class='my-cutdown' wx:else bindscrolltoupper="refreshMy" >
+    <view class='list'>
+      <view class='item bg-fff' wx:for="{{myList}}" wx:key data-bargain_id="{{item.bargain_id}}" bindtap='showDetails'>
+        <view class='goods flex'>
+          <view class='goods-img'>
+            <image src='{{item.img_src}}'></image>
+          </view>
+          <view class='goods-info flexC'>
+            <view class='goods-title'>{{item.main_title}}</view>
+            <view class='cutdown-tip'>
+              <view class='price'>已砍
+                <text style='color:#e02e24;font-size:30rpx;'>{{item.already_price}}</text>,还剩
+                <text style='color:#e02e24'>{{item.surplus_price}}</text>元</view>
+              <view class='success' wx:if="{{false}}"></view>
+            </view>
+          </view>
+        </view>
+        <view class='user-option flex'>
+          <view class='flexC'></view>
+          <view class='time'>{{dateFr.getDate(item.invalid_time,':')}}后结束</view>
+          <view class='btn'>继续砍价</view>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+</view>
+
+
+<view id='footer' class='flex'>
+  <view class='item flexC flex' bindtap='changeTab' data-type='1'>
+    <image src='../../libs/icon/kanjia.jpg' style='width:36rpx;height:35rpx; margin-right:10rpx;'></image>
+    <text class="{{Tab==0?'active':''}}">砍价商品</text>
+  </view>
+  <view class='item flexC flex' bindtap='changeTab' data-type='2'>
+    <text class="{{Tab==1?'active':''}}">我的砍价</text>
+  </view>
+</view>

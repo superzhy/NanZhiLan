@@ -1,0 +1,46 @@
+<!--pages/address/address.wxml-->
+<scroll-view class='list' scroll-y='true' style="height: {{windowHeight-45}}px;">
+   <view class='item' wx:for='{{list}}' wx:key >
+      <view class='cont' data-id='{{item.id}}' data-index='{{index}}' bindtap='checked'>
+        <view class='text'>
+          <view class='userInfo row'>{{item.receiving_name}}，{{item.receiving_phone}}</view>
+        <view class='userAddress row'>{{item.receiving_address}}</view>
+        </view>
+         <view class='state' wx:if="{{item.isChecked}}" hidden='{{addressType}}'>
+        使用中
+        </view> 
+      </view>
+      <view class='toolbar'>
+        <view class="default toolBtn {{item.is_default==1 ? 'checked' : ''}}" data-id='{{item.id}}'  bindtap='setDefault'>
+            <icon></icon>
+            <text>设为默认值</text>
+        </view>
+        <view class='delete toolBtn' data-id='{{item.id}}' bindtap='deleteAddress'>
+            <icon></icon>
+            <text>删除</text>
+        </view>
+      </view>
+   </view>
+   <!-- <view class='item'>
+      <view class='cont'>
+        <view class='text'>
+          <view class='userInfo row'>小明，15785241234</view>
+        <view class='userAddress row'>河南省漯河市郾城区</view>
+        </view>
+      </view>
+      <view class='toolbar'>
+        <view class='default toolBtn'>
+            <icon></icon>
+            <text>设为默认值</text>
+        </view>
+        <view class='delete toolBtn'>
+            <icon></icon>
+            <text>删除</text>
+        </view>
+      </view>
+   </view> -->
+</scroll-view>
+
+<view id='addAddress' bindtap='addAddress'>
+    添加地址
+</view>

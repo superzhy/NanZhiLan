@@ -1,0 +1,41 @@
+<!--index.wxml-->
+<view id='main'>
+  <view class='pindan-tip'>正在拼单</view>
+
+  <swiper class='banner' indicator-dots='true'>
+    <block wx:for="{{imgUrls}}" wx:key >
+      <swiper-item>
+        <image src="{{item}}" class="slide-image" />
+      </swiper-item>
+    </block>
+  </swiper>
+  <!-- <view id='wrapper'></view> -->
+
+  <view class='top-bar'>
+
+    <view class='select-bar'>
+      <view class='item' bindtap='openCutdown'>
+        <image src='../../libs/icon/index-kj.png'></image>
+      </view>
+      <view class='item' bindtap='openLotteryDraw'>
+        <image src='../../libs/icon/index-cj.png'></image>
+      
+      </view>
+    </view>
+  </view>
+
+<!-- <button open-type='getUserInfo'>获取用户信息</button> -->
+  <view class='margin-bar'>
+    <view class='lin'></view>
+  </view>
+  <view class='goods-list'>
+    <view class='goods-item' data-id='{{item.id}}' wx:for="{{goodsList}}" bindtap='openDeails' wx:key >
+      <image src='{{item.home_img}}'></image>
+      <view class='goods-info'>
+        <view class='lin'></view>
+        <text class='name'>{{item.main_title}}</text>
+        <text class='price'>￥{{item.discount_price}}</text>
+      </view>
+    </view>
+  </view>
+</view>

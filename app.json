@@ -1,0 +1,45 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/order/comment",
+    "pages/goods/goods_comment",
+    "pages/logistics/logistics",
+    "pages/order/index",
+    "pages/order/details",
+    "pages/my/my",
+    "pages/goods/details",
+    "pages/test/test",
+    "pages/pay/pay",
+    "pages/address/address",
+    "pages/logs/logs",
+    "pages/cutdown/cutdown",
+    "pages/cutdown/cutdown-details",
+    "pages/lottery_draw/lottery_draw",
+    "pages/lottery_draw/details"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#1e1e1e",
+    "navigationBarTitleText": "水果茶",
+    "navigationBarTextStyle": "#fff"
+  },
+  "tabBar": {
+    "color": "#666666",
+    "selectedColor": "#f56098",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "libs/icon/shouye.png",
+        "selectedIconPath": "libs/icon/shouye-act.png",
+        "text": "首页"
+      },
+      
+      {
+        "pagePath": "pages/my/my",
+        "iconPath": "libs/icon/wode.png",
+        "selectedIconPath": "libs/icon/wode-act.png",
+        "text": "我的"
+      }
+    ]
+  }
+}
