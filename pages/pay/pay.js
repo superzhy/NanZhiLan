@@ -271,14 +271,17 @@ Page({
     console.log(addressId);
     console.log(orderType);
 
-    if(addressId){
-        if (orderType == 1002) {
-          this.cutdownPay(bargain_id, addressId)
-        }
-        if (orderType == 1003) {
-          this.activityPay(activity_id, addressId)
-        }
-    }else if (sid && num && addressId && orderType) {
+    if (addressId && orderType == 1002) {
+      this.cutdownPay(bargain_id, addressId)
+      // if (orderType == 1002) {
+      //   this.cutdownPay(bargain_id, addressId)
+      // }
+      // if (orderType == 1003) {
+      //   this.activityPay(activity_id, addressId)
+      // }
+    } else if (addressId && orderType == 1003) {
+      this.activityPay(activity_id, addressId)
+    } else if (sid && num && addressId && orderType) {
       this.setData({
         btnLoading: true,
       })
@@ -462,49 +465,49 @@ Page({
 
 
 
-  setOrderStatus: function (order_id){
-      console.log(order_id)
+  setOrderStatus: function (order_id) {
+    console.log(order_id)
 
-      wx.showLoading({
-        title: '加载中',
-      })
-      var that = this;
-      network.POST({
-        url: 'order/bargain/update',
-        params: {
-          order_id: order_id,
-        },
-        success: function (res) {
-          wx.hideLoading()
-          // var data = res.data.data;
+    wx.showLoading({
+      title: '加载中',
+    })
+    var that = this;
+    network.POST({
+      url: 'order/bargain/update',
+      params: {
+        order_id: order_id,
+      },
+      success: function (res) {
+        wx.hideLoading()
+        // var data = res.data.data;
 
 
-          if (res.data.code == 200) {
-            wx.showToast({
-              title: '成功',
-              duration: 2000
-            })
+        if (res.data.code == 200) {
+          wx.showToast({
+            title: '成功',
+            duration: 2000
+          })
 
-            function redirect(){
-              wx.navigateTo({
-                url: '../order/index?type=' + 3
-              })
-            }
-            setTimeout(redirect,1500)
-          } else {
-            console.log(res)
-            wx.showToast({
-              title: '参数错误',
-              duration: 2000
+          function redirect() {
+            wx.navigateTo({
+              url: '../order/index?type=' + 3
             })
           }
-        },
-      })
+          setTimeout(redirect, 1500)
+        } else {
+          console.log(res)
+          wx.showToast({
+            title: '参数错误',
+            duration: 2000
+          })
+        }
+      },
+    })
   },
 
 
-  activityPay: function (activity_id, addressId){
-    console.log(activity_id,addressId)
+  activityPay: function (activity_id, addressId) {
+    console.log(activity_id, addressId)
 
     var that = this;
     wx.showLoading({
@@ -542,7 +545,7 @@ Page({
       }
     })
 
-  }, 
+  },
 
   payment: function (_data) {
     // console.log(_data)

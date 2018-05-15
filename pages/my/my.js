@@ -1,6 +1,6 @@
 // pages/my/my.js
 const app = getApp()
-let network = require("../../utils/network.js")
+var network = require("../../utils/network.js")
 Page({
 
   /**
@@ -23,6 +23,8 @@ Page({
         avatarUrl: app.globalData.userInfo.avatarUrl
       })
     }
+
+    console.log('onLoad')
   },
 
   /**
@@ -36,13 +38,14 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+    console.log('onShow')    
     var that = this;
     wx.showLoading({
       title: '加载中',
     })
 
     network.POST({
-      url: "order/count/list ",
+      url: "order/count/list",
       params: {
         user_id: app.userId
       },

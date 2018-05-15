@@ -131,18 +131,18 @@
 </scroll-view>
 <!-- 底部 -->
 <view id='footer'>
-  <view class='item'>
+  <view class='item' bindtap='goToIndex'>
     <image class='icon' src='../../libs/icon/home.png'></image>
     <view class='text'>首页</view>
   </view>
-  <view class='item'>
+  <!-- <view class='item'>
     <image class='icon' src='../../libs/icon/sc.png'></image>
     <view class='text'>收藏</view>
-  </view>
-  <view class='item'>
+  </view> -->
+  <button class='item' open-type="contact">
     <image class='icon' src='../../libs/icon/cat.png'></image>
     <view class='text'>客服</view>
-  </view>
+  </button>
   <view class='alone' data-type='alone' bindtap='showModal'>
     <view class='price'>¥9.9</view>
     <view class='text'>单独购买</view>

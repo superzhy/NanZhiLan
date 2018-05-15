@@ -2,7 +2,7 @@
   <image src='../../libs/icon/activity.png'></image>
 </view>
 
-<view class='list' wx:if="{{list.length>0}}">
+<view class='list' wx:if="{{List.length>0}}">
   <view class='item flex' wx:for="{{List}}" wx:key bindtap='openDetails' data-activity_id='{{item.activity_id}}'>
     <view class='goods-img' >
       <image src='{{item.img_src}}'></image>
@@ -24,4 +24,4 @@
   </view>
 </view>
 
-<view class='tips' wx:else>暂无抽奖</view>
+ <view class='tips' wx:else>暂无抽奖</view> 

@@ -169,51 +169,12 @@ Page({
       },
     })
   },
-  // getData: function (_id, _url) {
-  //   // console.log(_id)
-  //   wx.showLoading({
-  //     title: '加载中',
-  //   })
-  //   var that = this;
-  //   wx.request({
-  //     url: app.API_URL + _url,
-  //     data: {
-  //       id: _id
-  //     },
-  //     method: 'POST',
-  //     header: {
-  //       'content-type': 'application/json'
-  //     },
-  //     success: function (res) {
-  //       wx.hideLoading();
-  //       console.log(res.data)
-  //       if (res.data.code == 200) {
-  //         // console.log()
-  //         that.setData({
-  //           goods: res.data.data,
-  //           imgUrls: res.data.data.product.img_src,
-  //           list: res.data.data.list,
-  //           classify2: res.data.data.list[0].spec,
-  //           goodsImg: res.data.data.list[0].img_src,
-  //           sPrice: res.data.data.product.discount_price
-  //         })
-  //         // console.log(res.data)
-  //       } else {
-  //         wx.showToast({
-  //           title: res.data.message,
-  //           icon: 'none',
-  //           duration: 2000
-  //         })
-  //       }
-  //     },
-  //     fail: function (res) {
-  //       wx.showToast({
-  //         title: '连接服务器错误',
-  //         duration: 2000
-  //       })
-  //     }
-  //   })
-  // },
+
+  goToIndex:function(){
+    wx.switchTab({
+      url: '../index/index'
+    })
+  },  
 
 
 

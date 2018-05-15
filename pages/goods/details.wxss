@@ -5,6 +5,15 @@ page {
   width: 100%;
   height: 100%;
 }
+button {
+  padding-left: 0;
+  padding-right:0;
+  line-height: 1;
+  background-color: #fff;
+}
+button::after {
+  border: none;
+}
 
 .banner {
   width: 100%;
@@ -114,6 +123,7 @@ page {
   justify-content: space-between;
   border-bottom: 1px solid #ddd;
 }
+
 .goods-group .list .item:last-child {
   border: none;
 }
@@ -150,7 +160,6 @@ page {
   background: #f00;
 }
 
-
 .goods-group-model {
   position: fixed;
   width: 600rpx;
@@ -162,6 +171,7 @@ page {
   border-radius: 10rpx;
   padding-bottom: 50rpx;
 }
+
 .goods-group-model .title {
   height: 80rpx;
   line-height: 80rpx;
@@ -190,7 +200,8 @@ page {
   background: #ddd;
   border-radius: 50%;
 }
-.goods-group-model .item .user-photo image{
+
+.goods-group-model .item .user-photo image {
   width: 100%;
   height: 100%;
   border-radius: 50%;
@@ -202,17 +213,20 @@ page {
 }
 
 .goods-group-model .item .cont .user-name {
-   width: 50%;
+  width: 50%;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
+
 .goods-group-model .item .cont .top {
   align-items: center;
 }
+
 .goods-group-model .item .cont .top view {
   display: inline-block;
 }
+
 .goods-group-model .item .btn {
   font-size: 22rpx;
   border-radius: 5rpx;
@@ -232,8 +246,6 @@ page {
   background: #ddd;
   font-size: 22rpx;
 }
-
-
 
 /* 商品评价 */
 
@@ -452,6 +464,7 @@ page {
   text-align: center;
   font-size: 10px;
   padding-top: 5px;
+  line-height: normal;
 }
 
 #footer .item .icon {

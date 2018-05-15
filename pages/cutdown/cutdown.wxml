@@ -37,8 +37,8 @@
 
   <!-- 我的砍价  -->
   <scroll-view scroll-y='true' style='height:100%' class='my-cutdown' wx:else bindscrolltoupper="refreshMy" >
-    <view class='list'>
-      <view class='item bg-fff' wx:for="{{myList}}" wx:key data-bargain_id="{{item.bargain_id}}" bindtap='showDetails'>
+    <view class='list' wx:if="{{myList.length>0}}">
+      <view class='item bg-fff'  wx:for="{{myList}}" wx:key data-bargain_id="{{item.bargain_id}}" bindtap='showDetails'>
         <view class='goods flex'>
           <view class='goods-img'>
             <image src='{{item.img_src}}'></image>
@@ -59,6 +59,13 @@
           <view class='btn'>继续砍价</view>
         </view>
       </view>
+
+      <!-- <view class='tips' wx:else>
+        暂无数据
+      </view> -->
+    </view>
+    <view class='tips'>
+      暂无数据
     </view>
   </scroll-view>
 </view>
