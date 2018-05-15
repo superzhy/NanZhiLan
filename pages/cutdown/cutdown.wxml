@@ -64,7 +64,7 @@
         暂无数据
       </view> -->
     </view>
-    <view class='tips'>
+    <view class='tips' wx:else>
       暂无数据
     </view>
   </scroll-view>
